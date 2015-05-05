@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/miha/Dev/eugo-all-test/app'
+let g:netrw_dirhist_2='/Users/miha/Dev/eugo-all-test/app/views'
+let g:netrw_dirhist_3='/Users/miha/Dev/eugo-all-test/app/views/investors'
+let g:netrw_dirhist_4='/Users/miha/Dev/eu-skladi-2020/templates'
+let g:netrw_dirhist_5='/Volumes/samson.matheo.si (skins)/eu_skladi_new_podoba_custom_templates/assets'
+let g:netrw_dirhist_6='/Volumes/samson.matheo.si (skins)/eu_skladi_new_podoba_custom_templates/assets/stylesheets'
