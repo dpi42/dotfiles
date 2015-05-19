@@ -295,12 +295,11 @@ set mouse=a
 
 "
 " jump between buffers
-"
-" Move to the previous buffer with "gp"
-nnoremap gp :bp<CR>
 
-" Move to the next buffer with "gn"
-nnoremap gn :bn<CR>
+nnoremap <silent> [b :bprevious<CR>
+nnoremap <silent> ]b :bnext<CR>
+nnoremap <silent> [B :bfirst<CR>
+nnoremap <silent> ]B :blast<CR>
 
 " List all possible buffers with "gl"
 nnoremap gl :ls<CR>
@@ -322,7 +321,7 @@ nmap <leader>A :tab split<CR>:Ack <C-r><C-w><CR>
 
 
 " Set default side
-set lines=50 columns=145
+set lines=38 columns=145
 
 
 " " set C-s for saving
