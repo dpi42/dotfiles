@@ -293,9 +293,7 @@ nnoremap <leader><leader> <c-^>
 " allow mouse clicks to change cursor position
 set mouse=a
 
-"
 " jump between buffers
-
 nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> [B :bfirst<CR>
