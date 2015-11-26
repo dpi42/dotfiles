@@ -1,9 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_cnt =1
 let g:netrw_dirhist_1='/Users/miha/Dev/goopti/goopti-storefront'
-let g:netrw_dirhist_2='/Users/miha/Dev/goopti/goopti-storefront/app'
-let g:netrw_dirhist_3='/Users/miha/Dev/goopti/goopti-storefront/app/assets'
-let g:netrw_dirhist_4='/Users/miha/Dev/goopti/goopti-storefront/app'
-let g:netrw_dirhist_5='/Users/miha/Dev/goopti/goopti-storefront/app/views'
-let g:netrw_dirhist_6='/Users/miha/Dev/goopti/goopti-storefront/app/views/partials'
-let g:netrw_dirhist_7='/Users/miha/Dev/goopti/goopti-storefront/app/views/partials/products'
