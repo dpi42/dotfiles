@@ -49,7 +49,7 @@ plugins=(git)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/miha/.gem/ruby/2.0.0/bin"
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/miha/.gem/ruby/2.0.0/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -109,12 +109,6 @@ bindkey '^S' history-incremental-search-forward
 bindkey '^P' history-search-backward
 bindkey '^N' history-search-forward
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-
-# rbenv magic
-# eval "$(rbenv init -)"
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-export RBENV_ROOT=/usr/local/var/rbenv
 
 # hopefully fixing ValueError: unknown locale: UTF-8 issue
 # export LC_ALL=en_US.UTF-8
@@ -130,3 +124,8 @@ export LC_ALL=
 
 # Aliases
 alias go-sketch-plugins='cd /Users/miha/Library/Containers/com.bohemiancoding.sketch3/Data/Library/Application\ Support/com.bohemiancoding.sketch3/Plugins'
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
+# Abbreviation for "gem install".
+gi() { gem install $@; rbenv rehash; rehash }
