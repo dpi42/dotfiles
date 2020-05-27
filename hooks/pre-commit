@@ -1,0 +1,66 @@
+#!/bin/sh
+#
+# An example hook script to verify what is about to be committed.
+# Called by "git commit" with no arguments.  The hook should
+# exit with non-zero status after issuing an appropriate message if
+# it wants to stop the commit.
+#
+# To enable this hook, rename this file to "pre-commit".
+
+if git rev-parse --verify HEAD >/dev/null 2>&1
+then
+	against=HEAD
+else
+	# Initial commit: diff against an empty tree object
+	against=f40054f1968508ede6a1991331f817a0fd6139d6
+fi
+
+# If you want to allow non-ASCII filenames set this variable to true.
+allownonascii=$(git config --bool hooks.allownonascii)
+
+# Redirect output to stderr.
+exec 1>&2
+
+file="./_sketch_files.txt"
+rm $file
+touch $file
+
+for f in $(find ./ -name '*.sketch')
+do
+  [ -e "$f" ] || continue
+  e="${f##*.}"
+  f="${f%.*}"
+
+  # Remember sketch files
+  echo $f >> $file
+
+  # Copy .sketch to .zip
+  cp $f.sketch $f.zip
+
+  # Unzip the file and delete
+  unzip -o $f.zip -d $f/
+  rm -Rf $f.zip
+
+  # Remove the preview file
+  rm -Rf $f/previews/
+
+  git add $f/
+  chflags hidden $f/
+done
+
+
+## expand jsons
+for f in $(find ./ -name '*.json')
+do
+  [ -e "$f" ] || continue
+  [ -s "$f" ] || continue
+
+  mv $f $f.tmp
+  cat $f.tmp | python -m json.tool > $f
+  rm $f.tmp
+  git add $f
+done
+
+git add $file
+
+

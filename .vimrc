@@ -1,7 +1,9 @@
 " .vimrc
 
 
-set runtimepath^=~/.vim/bundle/ctrlp.vim
+set rtp+=~/.vim/bundle/ctrlp.vim
+
+
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -9,7 +11,7 @@ call vundle#begin()
 
 
 " Let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 " The rest of them
 Plugin 'tpope/vim-fugitive'
@@ -328,3 +330,5 @@ set lines=38 columns=145
 " mapiram space + space + s v shranjevanje oz :w
 " nnoremap <leader><leader>s <esc>:w<CR>
 
+alias export-sketch='~/dotfiles/hooks/pre-commit'
+alias build-sketch='~/dotfiles/hooks/post-merge'

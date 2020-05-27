@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+
+
+# Redirect output to stderr.
+exec 1>&2
+
+file="./_sketch_files.txt"
+home=$PWD
+
+cat $file | while read f
+do
+  fname=$(basename $f)
+  # Zip core Sketch data
+  cd $f/ && zip $fname.zip -r .
+
+  # Copy .zip to .sketch
+  cp $fname.zip ../$fname.sketch
+  chflags hidden $f/
+
+  # Remove zip
+  rm -Rf $fname.zip && cd $home
+done
+
