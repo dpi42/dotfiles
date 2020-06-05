@@ -129,3 +129,7 @@ eval "$(rbenv init -)"
 
 # Abbreviation for "gem install".
 gi() { gem install $@; rbenv rehash; rehash }
+
+
+alias export-sketch='~/dotfiles/hooks/pre-commit'
+alias build-sketch='~/dotfiles/hooks/post-merge'

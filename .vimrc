@@ -329,6 +329,3 @@ set lines=38 columns=145
 
 " mapiram space + space + s v shranjevanje oz :w
 " nnoremap <leader><leader>s <esc>:w<CR>
-
-alias export-sketch='~/dotfiles/hooks/pre-commit'
-alias build-sketch='~/dotfiles/hooks/post-merge'
