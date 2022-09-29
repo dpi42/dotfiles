@@ -78,6 +78,11 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias go-sketch-plugins='cd /Users/miha/Library/Containers/com.bohemiancoding.sketch3/Data/Library/Application\ Support/com.bohemiancoding.sketch3/Plugins'
+
+alias export-sketch='~/dotfiles/hooks/pre-commit'
+alias build-sketch='~/dotfiles/hooks/post-merge'
+
 
 function virtualenv_info {
     [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
@@ -122,14 +127,10 @@ export LC_NUMERIC="en_US.UTF-8"
 export LC_TIME="en_US.UTF-8"
 export LC_ALL=
 
-# Aliases
-alias go-sketch-plugins='cd /Users/miha/Library/Containers/com.bohemiancoding.sketch3/Data/Library/Application\ Support/com.bohemiancoding.sketch3/Plugins'
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-
+# export PATH="$HOME/.rbenv/bin:$PATH"
+# eval "$(rbenv init -)"
 # Abbreviation for "gem install".
-gi() { gem install $@; rbenv rehash; rehash }
+# gi() { gem install $@; rbenv rehash; rehash }
 
 
-alias export-sketch='~/dotfiles/hooks/pre-commit'
-alias build-sketch='~/dotfiles/hooks/post-merge'
+eval "$(/opt/homebrew/bin/brew shellenv)"
